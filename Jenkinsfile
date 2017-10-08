@@ -16,7 +16,7 @@ node('local') {
 
         stage('Test') {
             sh "${tool name: 'sbt 0.13.15', type: 'org.jvnet.hudson.plugins.SbtPluginBuilder$SbtInstallation'}/bin/sbt -no-colors coverageOn test assembly coverageReport"
-            sh "java -jar target/scala-2.11/*-assembly-*.*.*-SNAPSHOT.jar"
+            sh "java -jar target/scala-2.11/*-assembly-*.*.*-SNAPSHOT.jar -h"
         }
 
         stage('Results') {
