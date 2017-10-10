@@ -22,6 +22,6 @@ or install via your distribution's package manager.
 <p>
   <!-- Obscure e-mail address for spammers -->
 For any question related to this tool, please use the github issue tracker or contact 
-  <a href='http://sasc.lumc.nl/'>the SASC team</a> directly at: <br>
-  &#115;&#97;&#115;&#99;&#32;&#91;&#97;&#116;&#93;&#32;&#108;&#117;&#109;&#99;&#32;&#91;&#100;&#111;&#116;&#93;&#32;&#110;&#108;
+  <a href='http://sasc.lumc.nl/'>the SASC team</a> directly at: 
+  &#115;&#97;&#115;&#99;&#64;&#108;&#117;&#109;&#99;&#46;&#110;&#108;
 </p>
