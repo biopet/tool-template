@@ -1,11 +1,13 @@
 language: scala
-
+install:
+  - pip install mkdocs
 scala:
   - 2.11.11
 
 script:
   - sbt clean coverage test coverageReport &&
     sbt coverageAggregate
+  - mkdocs build --clean -s
 after_success:
   - sbt coveralls
   - bash <(curl -s https://codecov.io/bash)
