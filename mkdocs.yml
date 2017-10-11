@@ -1,0 +1,5 @@
+site_name: TOOLNAME
+pages:
+  - Home: 'README.md'
+  - Manual: 'manual.md'
+theme: readthedocs
