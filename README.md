@@ -1,4 +1,4 @@
-#  BIOPET tool suite
+#  < TOOL NAME >
 This tool is part of BIOPET tool suite that is developed at LUMC by [the SASC team](http://sasc.lumc.nl/). 
 Each tool in the BIOPET tool suite is meant to offer a standalone function that can be used to perform a
 dedicate data analysis task or added as part of [BIOPET pipelines](http://biopet-docs.readthedocs.io/en/latest/).
@@ -17,8 +17,9 @@ To generate the usage run:
 java -jar <tool>-version.jar --help
 ```
 
-#  Manual
-<Help doc of a tool>
+#  Documentation
+For documentation and manuals visit the [readthedocs page](biopet-<toolName>.readthedocs.io/en/latest).
+
 
 #  Contact
 
