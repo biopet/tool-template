@@ -1,5 +1,5 @@
 site_name: TOOLNAME
 pages:
-  - Home: 'README.md'
+  - Home: 'index.md'
   - Manual: 'manual.md'
 theme: readthedocs
