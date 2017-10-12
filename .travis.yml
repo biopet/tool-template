@@ -2,17 +2,18 @@ sudo: required
 
 matrix:
   include:
+
     - language: scala
       scala:
         - 2.11.11
-      env:
-        TEST_SCRIPT: "tests/tool_test.sh"
+      script:
+        - sbt clean coverage test coverageReport &&
+          sbt coverageAggregate
+      after_success:
+        - sbt coveralls
+        - bash <(curl -s https://codecov.io/bash)
+
     - language: python
       python: 2.7
-      env:
-        TEST_SCRIPT: "tests/documentation_test.sh"
-script:
-  - bash "$TEST_SCRIPT"
-after_success:
-  - sbt coveralls
-  - bash <(curl -s https://codecov.io/bash)
+      install: sudo pip install -r docs/requirements.txt
+      script: make -C docs/ html
