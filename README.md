@@ -1,7 +1,8 @@
 TODO:
 - Update this file
 - Update docs/manual.md
-- Update mkdocs.yml
+- Update index.rst
+- Update docs/installation.md
 
 #  < TOOL NAME >
 This tool is part of BIOPET tool suite that is developed at LUMC by [the SASC team](http://sasc.lumc.nl/). 
@@ -12,7 +13,7 @@ dedicate data analysis task or added as part of [BIOPET pipelines](http://biopet
 <Description of a tool>
 
 #  Documentation
-For documentation and manuals visit the [readthedocs page](biopet-<toolName>.readthedocs.io/en/latest).
+For documentation and manuals visit the [readthedocs page](http://biopet-toolName.readthedocs.io/en/latest/).
 
 
 #  Contact
