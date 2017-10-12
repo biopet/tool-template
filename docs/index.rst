@@ -6,7 +6,7 @@
 Welcome to tool-template's documentation!
 =========================================
 
-.. mdinclude:: README.md
+.. mdinclude:: ../README.md
 
-.. mdinclude:: docs/INSTALLATION.md
-.. mdinclude:: docs/MANUAL.md
+.. mdinclude:: INSTALLATION.md
+.. mdinclude:: MANUAL.md
