@@ -1,16 +1,22 @@
 sudo: required
-language: scala
-scala:
-  - 2.11.11
+matrix:
+  - env:
+      TEST_COMMAND_1: "sbt clean coverage test coverageReport"
+      TEST_COMMAND_2: "sbt coverageAggregate"
+      TEST_COMMAND_3: "echo done"
+  - env:
+      TEST_COMMAND_1: "sudo apt install python python-pip python-setuptools"
+      TEST_COMMAND_2: "sudo pip install -r requirements.txt"
+      TEST_COMMAND_3: "make -C docs html"
 
 before_install:
-- sudo apt install python python-pip python-setuptools
+-
 install:
 - sudo pip install -r requirements.txt
 script:
-  - sbt clean coverage test coverageReport &&
-    sbt coverageAggregate
-  - make html
+  - $TEST_COMMAND_1
+  - $TEST_COMMAND_2
+  - $TEST_COMMAND_3
 after_success:
   - sbt coveralls
   - bash <(curl -s https://codecov.io/bash)
