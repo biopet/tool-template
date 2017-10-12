@@ -1,1 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/bash
+sbt clean coverage test coverageReport && \
+sbt coverageAggregate
