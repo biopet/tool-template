@@ -1,12 +1,11 @@
 sudo: required
 language: scala
-scala:
-  - 2.11.11
 matrix:
-  - env:
-      TEST_SCRIPT: "tests/tool_test.sh"
-  - env:
-      TEST_SCRIPT: "tests/documentation_test.sh"
+  include:
+    - env:
+        TEST_SCRIPT: "tests/tool_test.sh"
+    - env:
+        TEST_SCRIPT: "tests/documentation_test.sh"
 
 script:
   - bash -c "$TEST_SCRIPT"
