@@ -8,4 +8,5 @@ Welcome to tool-template's documentation!
 
 .. mdinclude:: README.md
 
-.. mdinclude:: docs/manual.md
+.. mdinclude:: docs/INSTALLATION.md
+.. mdinclude:: docs/MANUAL.md

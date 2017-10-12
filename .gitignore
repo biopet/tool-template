@@ -2,5 +2,6 @@
 target/
 test-output/
 .venv/
-site/
 _build/
+_static/
+_templates/
