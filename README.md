@@ -3,6 +3,7 @@ TODO:
 - Update docs/manual.md
 - Update index.rst
 - Update docs/installation.md
+- Make sure all links are correct
 
 #  < TOOL NAME >
 This tool is part of BIOPET tool suite that is developed at LUMC by [the SASC team](http://sasc.lumc.nl/). 
