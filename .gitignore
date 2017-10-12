@@ -3,5 +3,3 @@ target/
 test-output/
 .venv/
 _build/
-_static/
-_templates/

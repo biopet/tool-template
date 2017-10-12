@@ -1,13 +1,16 @@
+sudo: required
 language: scala
-install:
-  - pip install mkdocs
 scala:
   - 2.11.11
 
+before_install:
+- sudo apt install python python-pip python-setuptools
+install:
+- sudo pip install -r requirements.txt
 script:
   - sbt clean coverage test coverageReport &&
     sbt coverageAggregate
-  - mkdocs build --clean -s
+  - make html
 after_success:
   - sbt coveralls
   - bash <(curl -s https://codecov.io/bash)
