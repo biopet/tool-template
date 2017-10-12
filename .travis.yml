@@ -10,9 +10,9 @@ matrix:
       TEST_COMMAND_3: "make -C docs html"
 
 script:
-  - $TEST_COMMAND_1
-  - $TEST_COMMAND_2
-  - $TEST_COMMAND_3
+  - bash -c $TEST_COMMAND_1
+  - bash -c $TEST_COMMAND_2
+  - bash -c $TEST_COMMAND_3
 after_success:
   - sbt coveralls
   - bash <(curl -s https://codecov.io/bash)
