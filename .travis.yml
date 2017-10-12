@@ -10,7 +10,7 @@ matrix:
         TEST_SCRIPT: "tests/documentation_test.sh"
 
 script:
-  - bash -c "$TEST_SCRIPT"
+  - bash "$TEST_SCRIPT"
 after_success:
   - sbt coveralls
   - bash <(curl -s https://codecov.io/bash)
