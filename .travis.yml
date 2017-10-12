@@ -1,18 +1,12 @@
 sudo: required
 matrix:
   - env:
-      TEST_COMMAND_1: "sbt clean coverage test coverageReport"
-      TEST_COMMAND_2: "sbt coverageAggregate"
-      TEST_COMMAND_3: "echo done"
+      TEST_SCRIPT: "tests/tool_test.sh"
   - env:
-      TEST_COMMAND_1: "sudo apt install python python-pip python-setuptools"
-      TEST_COMMAND_2: "sudo pip install -r docs/requirements.txt"
-      TEST_COMMAND_3: "make -C docs html"
+      TEST_SCRIPT: "tests/documentation_test.sh"
 
 script:
-  - bash -c $TEST_COMMAND_1
-  - bash -c $TEST_COMMAND_2
-  - bash -c $TEST_COMMAND_3
+  - bash -c "$TEST_SCRIPT"
 after_success:
   - sbt coveralls
   - bash <(curl -s https://codecov.io/bash)
