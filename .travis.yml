@@ -4,11 +4,15 @@ scala:
   - 2.11.11
 matrix:
   include:
-    - env:
+    - language: scala
+      scala:
+        - 2.11.11
+      env:
         TEST_SCRIPT: "tests/tool_test.sh"
-    - env:
+    - language: python
+      python: 2.7
+      env:
         TEST_SCRIPT: "tests/documentation_test.sh"
-
 script:
   - bash "$TEST_SCRIPT"
 after_success:
