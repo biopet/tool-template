@@ -35,8 +35,7 @@ val readme: String="./README.md"
 
 sourceDirectory in LaikaSite := file(docsDir)
 sourceDirectories in Laika := Seq((sourceDirectory in LaikaSite).value)
-
-
+rawContent in Laika := true
 git.remoteRepo := "git@github.com:biopet/test.git"
 ghpagesRepository := file("target/gh")
 
