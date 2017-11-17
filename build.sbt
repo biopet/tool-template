@@ -31,7 +31,7 @@ publishTo := {
 
 preprocessVars in Preprocess := Map("VERSION" -> version.value)
 val docsDir: String="target/markdown/"
-val readme: String="README.md"
+val readme: String="./README.md"
 
 sourceDirectory in LaikaSite := file(docsDir)
 sourceDirectories in Laika := Seq((sourceDirectory in LaikaSite).value)
@@ -49,7 +49,7 @@ excludeFilter in ghpagesCleanSite := new FileFilter{
 
 lazy val generateDocs = taskKey[Unit]("Generate documentation files")
 
-fullRunTask(generateDocs, Test , "Documentation", docsDir, readme)
+fullRunTask(generateDocs, Test , "nl.biopet.tools.template.Documentation", docsDir, readme)
 
 makeSite <<= makeSite.triggeredBy(generateDocs)
 makeSite <<= makeSite dependsOn(generateDocs)

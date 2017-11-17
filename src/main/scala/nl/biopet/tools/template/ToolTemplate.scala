@@ -6,6 +6,7 @@ object ToolTemplate extends ToolCommand[Args] {
   def emptyArgs = Args()
   def argsParser = new ArgsParser(toolName)
 
+  override def urlToolName: String = "tool-template"
   def main(args: Array[String]): Unit = {
     val cmdArgs = cmdArrayToArgs(args)
 
