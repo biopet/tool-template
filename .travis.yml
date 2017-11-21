@@ -16,6 +16,6 @@ matrix:
         Name: Readme and docs
       script:
         - echo "Test site generation" &&
-          sbt generateDocs
+          sbt makeSite
         - echo "Test if readme has changed" &&
           git diff --quiet --exit-code
