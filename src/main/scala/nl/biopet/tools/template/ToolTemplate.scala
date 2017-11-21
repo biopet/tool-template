@@ -17,7 +17,7 @@ object ToolTemplate extends ToolCommand[Args] {
 
     logger.info("Done")
   }
-
+  // TODO: Remove loremIpsum
   val loremIpsum : String = """Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                               |Aliquam bibendum tellus sed lectus tristique egestas.
                               |Aenean malesuada lacus sed mollis hendrerit. Aliquam ac mollis sapien.
@@ -38,10 +38,6 @@ object ToolTemplate extends ToolCommand[Args] {
                               |Nam mattis enim a ligula iaculis vulputate. Nam fringilla.
                               """.stripMargin
 
-  /**
-    * Description Text that is displayed in the readme and docs.
-    * @return
-    */
   def descriptionText = loremIpsum.substring(0,250)
 
   def manualText = loremIpsum
