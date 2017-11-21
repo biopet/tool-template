@@ -7,7 +7,7 @@ scalaVersion := "2.11.11"
 resolvers += Resolver.sonatypeRepo("snapshots")
 
 libraryDependencies += "com.github.biopet" %% "tool-utils" % "0.2-SNAPSHOT" changing()
-
+libraryDependencies += "com.github.biopet" %% "tool-test-utils" % "0.1-SNAPSHOT" changing()
 libraryDependencies += "com.github.biopet" %% "test-utils" % "0.1" % Test
 
 import LaikaKeys._
@@ -40,8 +40,8 @@ git.remoteRepo := "git@github.com:biopet/test.git"
 ghpagesRepository := file("target/gh")
 
 // Puts Scaladoc output in `target/site/api/latest`
-siteSubdirName in SiteScaladoc := s"${version.value}/api"
-
+siteSubdirName in SiteScaladoc := "api"
+siteDirectory in LaikaSite := file(s"target/site/${version.value}")
 excludeFilter in ghpagesCleanSite := new FileFilter{
   def accept(f: File) = true
 }
