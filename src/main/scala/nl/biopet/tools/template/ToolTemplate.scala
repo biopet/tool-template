@@ -38,9 +38,13 @@ object ToolTemplate extends ToolCommand[Args] {
                               |Nam mattis enim a ligula iaculis vulputate. Nam fringilla.
                               """.stripMargin
 
+  /**
+    * Description Text that is displayed in the readme and docs.
+    * @return
+    */
   def descriptionText = loremIpsum.substring(0,250)
 
   def manualText = loremIpsum
 
-  def exampleText = loremIpsum.substring(0,100)
+  def exampleText = loremIpsum.substring(0,250)
 }
