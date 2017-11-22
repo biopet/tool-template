@@ -18,4 +18,5 @@ matrix:
         - echo "Test site generation" &&
           sbt makeSite
         - echo "Test if readme has changed" &&
+          sbt generateReadme &&
           git diff --quiet --exit-code

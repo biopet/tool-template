@@ -74,8 +74,9 @@ excludeFilter in ghpagesCleanSite := new FileFilter{
 }
 
 lazy val generateDocs = taskKey[Unit]("Generate documentation files")
-
-fullRunTask(generateDocs, Runtime , "nl.biopet.tools.template.Documentation", docsDir, readme)
+lazy val generateReadme = taskKey[Unit]("Generate readme")
+fullRunTask(generateDocs, Runtime , "nl.biopet.tools.template.Documentation", docsDir)
+fullRunTask(generateReadme, Runtime , "nl.biopet.tools.template.Readme", readme)
 
 makeSite <<= makeSite.triggeredBy(generateDocs)
 makeSite <<= makeSite dependsOn(generateDocs)
