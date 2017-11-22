@@ -68,7 +68,7 @@ ghpagesRepository := file("target/gh")
 // Puts Scaladoc output in `target/site/api/latest`
 siteSubdirName in SiteScaladoc := s"${version.value}/api"
 siteSubdirName in LaikaSite := s"${version.value}"
-
+siteDirectory in Laika  := file("target/site")
 excludeFilter in ghpagesCleanSite := new FileFilter{
   def accept(f: File) = true
 }
