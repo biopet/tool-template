@@ -53,10 +53,13 @@ publishTo := {
     Some("releases"  at nexus + "service/local/staging/deploy/maven2")
 }
 
+lazy val Documentation = config("Documentation") extend(Runtime)
 preprocessVars in Preprocess := Map("VERSION" -> version.value)
 val docsDir: String="target/markdown/"
 val readme: String="./README.md"
 
+fullClasspath in Documentation := (fullClasspath in Runtime).value
+version in Documentation:= version.value
 sourceDirectory in LaikaSite := file(docsDir)
 sourceDirectories in Laika := Seq((sourceDirectory in LaikaSite).value)
 rawContent in Laika := true
@@ -67,7 +70,7 @@ ghpagesRepository := file("target/gh")
 
 // Puts Scaladoc output in `target/site/api/latest`
 siteSubdirName in SiteScaladoc := s"${version.value}/api"
-siteSubdirName in LaikaSite := s"${version.value}"
+// siteSubdirName in LaikaSite := s"${version.value}"
 siteDirectory in Laika  := file("target/site")
 excludeFilter in ghpagesCleanSite := new FileFilter{
   def accept(f: File) = true
@@ -75,8 +78,16 @@ excludeFilter in ghpagesCleanSite := new FileFilter{
 
 lazy val generateDocs = taskKey[Unit]("Generate documentation files")
 lazy val generateReadme = taskKey[Unit]("Generate readme")
-fullRunTask(generateDocs, Runtime , "nl.biopet.tools.template.Documentation", docsDir)
-fullRunTask(generateReadme, Runtime , "nl.biopet.tools.template.Readme", readme)
+
+//if (isSnapshot.value) {
+//  fullRunTask(generateDocs, Documentation, "nl.biopet.tools.template.Documentation", docsDir, s"$versionString", "false")
+//}
+//else {
+//  fullRunTask(generateDocs, Documentation, "nl.biopet.tools.template.Documentation", docsDir, s"$versionString", "true")
+//}
+fullRunTask(generateDocs, Documentation, "nl.biopet.tools.template.Documentation", docsDir,(version in Documentation).value , "true")
+
+fullRunTask(generateReadme, Documentation , "nl.biopet.tools.template.Readme", readme)
 
 makeSite <<= makeSite.triggeredBy(generateDocs)
 makeSite <<= makeSite dependsOn(generateDocs)
