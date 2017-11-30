@@ -46,6 +46,9 @@ releaseProcess := Seq[ReleaseStep](
 )
 
 // Documentation stuff
+val urlToolName="tool-template"
+val classPrefix="nl.biopet.tools.template"
+
 import LaikaKeys._
 enablePlugins(LaikaSitePlugin)
 enablePlugins(SiteScaladocPlugin)
@@ -59,17 +62,15 @@ sourceDirectory in LaikaSite := file(docsDir)
 sourceDirectories in Laika := Seq((sourceDirectory in LaikaSite).value)
 rawContent in Laika := true
 
-
-git.remoteRepo := "git@github.com:biopet/test.git"
+git.remoteRepo := s"git@github.com:biopet/$urlToolName.git"
 ghpagesRepository := file("target/gh")
 
-// Puts Scaladoc output in `target/site/api/latest`
+// Puts Scaladoc output in `in /api subfolder`
 siteSubdirName in SiteScaladoc := s"${version.value}/api"
 siteDirectory in Laika  := file("target/site")
 excludeFilter in ghpagesCleanSite := new FileFilter{
  def accept(f: File) = true
 }
-ghpagesPushSite <<= ghpagesPushSite dependsOn makeSite
 
 lazy val generateDocs = taskKey[Unit]("Generate documentation files")
 lazy val generateReadme = taskKey[Unit]("Generate readme")
@@ -80,7 +81,7 @@ generateDocs := {
   val input = Seq(docsDir, version.value, (!isSnapshot.value).toString)
   val classPath =  (fullClasspath in Runtime).value
   r.run(
-    "nl.biopet.tools.template.Documentation",
+    s"$classPrefix.Documentation",
     data(classPath),
     input,
     streams.value.log
@@ -92,7 +93,7 @@ generateReadme := {
   val input = Seq(readme)
   val classPath =  (fullClasspath in Runtime).value
   r.run(
-    "nl.biopet.tools.template.Readme",
+    s"$classPrefix.Readme",
     data(classPath),
     input,
     streams.value.log
@@ -100,3 +101,4 @@ generateReadme := {
 }
 makeSite <<= makeSite.triggeredBy(generateDocs)
 makeSite <<= makeSite dependsOn generateDocs
+ghpagesPushSite <<= ghpagesPushSite dependsOn makeSite
