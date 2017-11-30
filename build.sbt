@@ -67,8 +67,9 @@ ghpagesRepository := file("target/gh")
 siteSubdirName in SiteScaladoc := s"${version.value}/api"
 siteDirectory in Laika  := file("target/site")
 excludeFilter in ghpagesCleanSite := new FileFilter{
-  def accept(f: File) = true
+ def accept(f: File) = true
 }
+ghpagesPushSite <<= ghpagesPushSite dependsOn makeSite
 
 lazy val generateDocs = taskKey[Unit]("Generate documentation files")
 lazy val generateReadme = taskKey[Unit]("Generate readme")
@@ -78,24 +79,24 @@ generateDocs := {
   val r = (runner in Runtime).value
   val input = Seq(docsDir, version.value, (!isSnapshot.value).toString)
   val classPath =  (fullClasspath in Runtime).value
-  (r.run(
+  r.run(
     "nl.biopet.tools.template.Documentation",
     data(classPath),
-      input,
-      streams.value.log)
-    ).foreach(sys.error(_))
+    input,
+    streams.value.log
+  ).foreach(sys.error)
   }
 generateReadme := {
   import sbt.Attributed.data
-  val r = (runner in Runtime).value
+  val r: ScalaRun = (runner in Runtime).value
   val input = Seq(readme)
   val classPath =  (fullClasspath in Runtime).value
-  (r.run(
+  r.run(
     "nl.biopet.tools.template.Readme",
     data(classPath),
     input,
-    streams.value.log)
-    ).foreach(sys.error(_))
+    streams.value.log
+  ).foreach(sys.error)
 }
 makeSite <<= makeSite.triggeredBy(generateDocs)
-makeSite <<= makeSite dependsOn(generateDocs)
+makeSite <<= makeSite dependsOn generateDocs
