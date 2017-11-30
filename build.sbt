@@ -46,6 +46,7 @@ releaseProcess := Seq[ReleaseStep](
 )
 
 // Documentation stuff
+//TODO: Change these two variables
 val urlToolName="tool-template"
 val classPrefix="nl.biopet.tools.template"
 
