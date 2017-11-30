@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ToolTemplate</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="css/docs.css" rel="stylesheet">
+
+  </head>
+
+  <body  data-spy="scroll" data-target=".toc" data-offset="200">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">ToolTemplate</a>
+        </div>
+      </div>
+      <div class="nav navbar-nav navbar-right">
+        <p class="navbar-text" id="Version">
+        Version</p>
+        <li><a href="api/index.html"><span class="glyphicon glyphicon-share-alt" aria-hidden="true">
+          </span> api documentation</a></li>
+      </div>
+
+    </div>
+
+  </nav>
+  <div class="container">
+
+    <!-- Docs nav
+    ================================================== -->
+    <div class="row">
+      <div class="col-md-2 toc" >
+        
+        <ul class="nav nav-pills nav-stacked affix">
+          
+          <li><a href="#description"><span>Description</span></a></li>
+          
+          <li><a href="#installation"><span>Installation</span></a></li>
+          
+          <li><a href="#manual"><span>Manual</span></a></li>
+          
+          <li><a href="#about"><span>About</span></a></li>
+          
+          <li><a href="#contact"><span>Contact</span></a></li>
+          
+
+        </ul>
+      </div>
+      
+      <div class="col-md-10" id="top">
+
+        
+        <h1 id="description" class="section">Description</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Aliquam bibendum tellus sed lectus tristique egestas.
+        Aenean malesuada lacus sed mollis hendrerit. Aliquam ac mollis sapien.
+        Donec vel suscipit dui. Aenean pretium nibh in pulvinar consequat.
+        D</p>
+        
+        <h1 id="installation" class="section">Installation</h1>
+        <p>ToolTemplate requires Java 8 to be installed on your device. Download Java 8
+        <a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">here</a>
+        or install via your distribution&#39;s package manager.</p>
+        <p>Download the latest version of ToolTemplate <a href="https://github.com/biopet/tool-template/releases/">here</a>.
+        To generate the usage run:</p>
+        <pre><code>java -jar ToolTemplate --version.jar --help</code></pre>
+        
+        <h1 id="manual" class="section">Manual</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Aliquam bibendum tellus sed lectus tristique egestas.
+        Aenean malesuada lacus sed mollis hendrerit. Aliquam ac mollis sapien.
+        Donec vel suscipit dui. Aenean pretium nibh in pulvinar consequat.
+        Duis feugiat mattis erat, sed varius lectus eleifend vel.
+        Etiam feugiat neque a dolor ornare pulvinar.</p>
+        <p>Aenean id nibh mi.Fusce vel dapibus dui, quis dapibus felis.
+        Aenean ipsum purus, bibendum a odio non, mattis efficitur dui.
+        In fermentum est faucibus, bibendum urna sollicitudin, tempor erat.
+        Vivamus aliquet nulla enim, non pharetra dui pulvinar id.
+        Aliquam erat volutpat. Morbi tincidunt iaculis viverra.
+        Suspendisse eget metus at lorem varius feugiat. Aliquam erat volutpat.
+        Aliquam consequat nibh ut feugiat condimentum.
+        Pellentesque aliquam cursus ex, ac consequat est viverra vitae.
+        Donec purus orci, efficitur vel sem a, sodales aliquam tellus.
+        Maecenas at leo posuere, tempus risus in, sodales ligula.
+        Nam mattis enim a ligula iaculis vulputate. Nam fringilla.</p>
+        
+        <h2 id="example" class="section">Example</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Aliquam bibendum tellus sed lectus tristique egestas.
+        Aenean malesuada lacus sed mollis hendrerit. Aliquam ac mollis sapien.
+        Donec vel suscipit dui. Aenean pretium nibh in pulvinar consequat.
+        D</p>
+        
+        <h2 id="usage" class="section">Usage</h2>
+        <p>Usage for ToolTemplate:
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Required</th>
+              <th>Can occur multiple times</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>--log<em>level, -l</td>
+              <td>no</td>
+              <td>no</td>
+              <td>Level of log information printed. Possible levels: &#39;debug&#39;, &#39;info&#39;, &#39;warn&#39;, &#39;error&#39;</td>
+            </tr>
+            <tr>
+              <td>--help, -h</td>
+              <td>no</td>
+              <td>no</td>
+              <td>Print usage</td>
+            </tr>
+            <tr>
+              <td>--version, -v</td>
+              <td>no</td>
+              <td>no</td>
+              <td>Print version</td>
+            </tr>
+            <tr>
+              <td>--inputFile, -i</td>
+              <td>yes</td>
+              <td>no</td>
+              <td>NonEmptyDescription</td>
+            </tr>
+          </tbody>
+        </table></em></td></tr></tbody></table></p>
+        
+        <h1 id="about" class="section">About</h1>
+        <p>ToolTemplate is part of BIOPET tool suite that is developed at LUMC by <a href="http://sasc.lumc.nl/">the SASC team</a>.
+        Each tool in the BIOPET tool suite is meant to offer a standalone function that can be used to perform a
+        dedicate data analysis task or added as part of <a href="http://biopet-docs.readthedocs.io/en/latest/">BIOPET pipelines</a>.</p>
+        
+        <h1 id="contact" class="section">Contact</h1>
+        <p>
+          <!-- Obscure e-mail address for spammers -->
+        For any question related to ToolTemplate, please use the
+        <a href='https://github.com/biopet/tool-template/issues'>github issue tracker</a>
+        or contact
+          <a href='http://sasc.lumc.nl/'>the SASC team</a> directly at: <a href='&#109;&#97;&#105;&#108;&#116;&#111;&#58;
+ &#115;&#97;&#115;&#99;&#64;&#108;&#117;&#109;&#99;&#46;&#110;&#108;'>
+          &#115;&#97;&#115;&#99;&#64;&#108;&#117;&#109;&#99;&#46;&#110;&#108;</a>.
+        </p>      
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+  <script>
+    var loc = window.location.pathname;
+    var thisDir = loc.substring(0, loc.lastIndexOf('/'));
+    var splitLocation = window.location.pathname.split('/');
+    var version = splitLocation[splitLocation.length - 2]
+    document.getElementById("Version").innerHTML = "Version " + version;
+
+  </script>
+</html>
