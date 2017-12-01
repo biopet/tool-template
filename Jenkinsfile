@@ -10,12 +10,12 @@ node('local') {
             sh 'git submodule update --init --recursive'
         }
 
-        stage('Build') {
-            sh "${tool name: 'sbt 0.13.15', type: 'org.jvnet.hudson.plugins.SbtPluginBuilder$SbtInstallation'}/bin/sbt -no-colors clean compile"
+        stage('Build & Test') {
+            sh "${tool name: 'sbt 0.13.15', type: 'org.jvnet.hudson.plugins.SbtPluginBuilder$SbtInstallation'}/bin/sbt -no-colors clean coverage test coverageReport coverageAggregate makeSite generateReadme assembly"
         }
 
         stage('Test') {
-            sh "${tool name: 'sbt 0.13.15', type: 'org.jvnet.hudson.plugins.SbtPluginBuilder$SbtInstallation'}/bin/sbt -no-colors coverageOn assembly coverageReport"
+            //sh "${tool name: 'sbt 0.13.15', type: 'org.jvnet.hudson.plugins.SbtPluginBuilder$SbtInstallation'}/bin/sbt -no-colors coverageOn assembly coverageReport"
             sh "java -jar target/scala-2.11/*-assembly-*.jar -h"
         }
 
