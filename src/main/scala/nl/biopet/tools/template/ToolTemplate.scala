@@ -42,7 +42,7 @@ object ToolTemplate extends ToolCommand[Args] {
 
   def manualText =
     s"""
-      |Example:
+      |${loremIpsum.substring(0,250)} Example:
       |${example("-i", "<input_file>")}
     """.stripMargin
 
