@@ -58,24 +58,29 @@ enablePlugins(PreprocessPlugin)
 
 val docsDir: String="target/markdown/"
 val readme: String="./README.md"
+val ghpagesDir: String="target/gh"
 
 sourceDirectory in LaikaSite := file(docsDir)
 sourceDirectories in Laika := Seq((sourceDirectory in LaikaSite).value)
 rawContent in Laika := true
 
 git.remoteRepo := s"git@github.com:biopet/$urlToolName.git"
-ghpagesRepository := file("target/gh")
+ghpagesRepository := file(ghpagesDir)
 
 // Puts Scaladoc output in `in /api subfolder`
 siteSubdirName in SiteScaladoc := s"${version.value}/api"
 siteDirectory in Laika  := file("target/site")
-//excludeFilter in ghpagesCleanSite := new FileFilter{
-// def accept(f: File) = true
-//}
+
+// FileFilter that only includes current version for deletion.
+// The redirector is also included for deletion if version is not a snapshot.
 includeFilter in ghpagesCleanSite := new FileFilter{
-  def accept(file: File) = {
-    file.getAbsolutePath.contains(s"${version.value}")
-    }}
+  def accept(f: File) = {
+    println("path=" + f.getPath)
+    f.getPath.contains(s"${version.value}") ||
+      ( !(isSnapshot.value) &&
+      f.getPath == new java.io.File(ghpagesRepository.value, "index.html").getPath )
+    }
+}
 lazy val generateDocs = taskKey[Unit]("Generate documentation files")
 lazy val generateReadme = taskKey[Unit]("Generate readme")
 
