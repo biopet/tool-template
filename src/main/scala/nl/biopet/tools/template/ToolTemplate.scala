@@ -38,13 +38,13 @@ object ToolTemplate extends ToolCommand[Args] {
                               |Nam mattis enim a ligula iaculis vulputate. Nam fringilla.
                               """.stripMargin
 
-  def descriptionText = loremIpsum.substring(0,250)
+  def descriptionText: String = loremIpsum.substring(0,250)
 
-  def manualText =
+  def manualText: String =
     s"""
       |${loremIpsum.substring(0,250)} Example:
       |${example("-i", "<input_file>")}
     """.stripMargin
 
-  def exampleText = loremIpsum.substring(0,250)
+  def exampleText: String = loremIpsum.substring(0,250)
 }
