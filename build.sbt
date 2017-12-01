@@ -109,6 +109,6 @@ generateReadme := {
     streams.value.log
   ).foreach(sys.error)
 }
-makeSite <<= makeSite.triggeredBy(generateDocs)
-makeSite <<= makeSite dependsOn generateDocs
-ghpagesPushSite <<= ghpagesPushSite dependsOn makeSite
+makeSite := (makeSite triggeredBy generateDocs).value
+makeSite := (makeSite dependsOn generateDocs).value
+ghpagesPushSite := (ghpagesPushSite dependsOn makeSite).value
