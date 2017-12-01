@@ -69,10 +69,13 @@ ghpagesRepository := file("target/gh")
 // Puts Scaladoc output in `in /api subfolder`
 siteSubdirName in SiteScaladoc := s"${version.value}/api"
 siteDirectory in Laika  := file("target/site")
-excludeFilter in ghpagesCleanSite := new FileFilter{
- def accept(f: File) = true
-}
-
+//excludeFilter in ghpagesCleanSite := new FileFilter{
+// def accept(f: File) = true
+//}
+includeFilter in ghpagesCleanSite := new FileFilter{
+  def accept(file: File) = {
+    file.getAbsolutePath.contains(s"${version.value}")
+    }}
 lazy val generateDocs = taskKey[Unit]("Generate documentation files")
 lazy val generateReadme = taskKey[Unit]("Generate readme")
 
