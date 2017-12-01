@@ -1,22 +1,10 @@
 language: scala
 scala:
   - 2.11.11
-matrix:
-  include:
-    - env:
-        Name: Tool testing
-      script:
-        - sbt clean coverage test coverageReport &&
-          sbt coverageAggregate
-      after_success:
-        - sbt coveralls
-        - bash <(curl -s https://codecov.io/bash)
+script:
+  - sbt clean coverage test coverageReport coverageAggregate makeSite generateReadme &&
+    git diff --quiet --exit-code
+after_success:
+  - sbt coveralls
+  - bash <(curl -s https://codecov.io/bash)
 
-    - env:
-        Name: Readme and docs
-      script:
-        - echo "Test site generation" &&
-          sbt makeSite
-        - echo "Test if readme has changed" &&
-          sbt generateReadme &&
-          git diff --quiet --exit-code
