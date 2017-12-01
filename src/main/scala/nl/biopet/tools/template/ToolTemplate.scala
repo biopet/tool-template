@@ -40,7 +40,11 @@ object ToolTemplate extends ToolCommand[Args] {
 
   def descriptionText = loremIpsum.substring(0,250)
 
-  def manualText = loremIpsum
+  def manualText =
+    s"""
+      |Example:
+      |${example("-i", "<input_file>")}
+    """.stripMargin
 
   def exampleText = loremIpsum.substring(0,250)
 }
