@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta charset="utf-8">
     <title>ToolTemplate</title>
 
     <!-- Latest compiled and minified CSS -->
@@ -26,32 +25,31 @@
 
   </head>
 
-  <body  data-spy="scroll" data-target=".toc" data-offset="200">
+  <body>
   <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
+    <div class="container-fluid">
       <div class="navbar-header">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">ToolTemplate</a>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="navbar-text" id="Version">
+              Version</li>
+          </ul>
         </div>
       </div>
-      <div class="nav navbar-nav navbar-right">
-        <p class="navbar-text" id="Version">
-        Version</p>
-        <li><a href="api/index.html"><span class="glyphicon glyphicon-share-alt" aria-hidden="true">
-          </span> api documentation</a></li>
-      </div>
+
+
 
     </div>
 
   </nav>
   <div class="container">
 
-    <!-- Docs nav
-    ================================================== -->
     <div class="row">
-      <div class="col-md-2 toc" >
-        
-        <ul class="nav nav-pills nav-stacked affix">
+      <div class="col-sm-3 col-md-2 sidebar" >
+
+        <ul class="nav nav-sidebar nav-list">
+          <li><b>Index</b></li>
           
           <li><a href="#description"><span>Description</span></a></li>
           
@@ -61,13 +59,22 @@
           
           <li><a href="#about"><span>About</span></a></li>
           
+          <li><a href="#contributing"><span>Contributing</span></a></li>
+          
           <li><a href="#contact"><span>Contact</span></a></li>
           
-
         </ul>
+        <ul class="nav nav-sidebar nav-list">
+          <li><b>Project Links</b></li>
+
+          <li><a href="https://github.com/biopet/tool-template">Source code</a></li>
+          <li><a href="https://github.com/biopet/tool-template/issues">Feedback, feature requests and bug reports</a></li>
+          <li><a href="api/index.html">API Documentation</a></li>
+        </ul>
+
       </div>
       
-      <div class="col-md-10" id="top">
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="top">
 
         
         <h1 id="description" class="section">Description</h1>
@@ -112,7 +119,7 @@
         D</p>
         
         <h2 id="usage" class="section">Usage</h2>
-        <p>Usage for ToolTemplate:
+        <p>Usage for ToolTemplate:</p>
         <table class="table">
           <thead>
             <tr>
@@ -124,7 +131,7 @@
           </thead>
           <tbody>
             <tr>
-              <td>--log<em>level, -l</td>
+              <td>--log_level, -l</td>
               <td>no</td>
               <td>no</td>
               <td>Level of log information printed. Possible levels: &#39;debug&#39;, &#39;info&#39;, &#39;warn&#39;, &#39;error&#39;</td>
@@ -148,12 +155,22 @@
               <td>NonEmptyDescription</td>
             </tr>
           </tbody>
-        </table></em></td></tr></tbody></table></p>
+        </table>
         
         <h1 id="about" class="section">About</h1>
         <p>ToolTemplate is part of BIOPET tool suite that is developed at LUMC by <a href="http://sasc.lumc.nl/">the SASC team</a>.
         Each tool in the BIOPET tool suite is meant to offer a standalone function that can be used to perform a
         dedicate data analysis task or added as part of <a href="http://biopet-docs.readthedocs.io/en/latest/">BIOPET pipelines</a>.</p>
+        <p>All tools in the BIOPET tool suite are <a href="https://www.gnu.org/philosophy/free-sw.html">Free</a> and
+        <a href="https://opensource.org/osd">Open Source</a> Software.</p>
+        
+        <h1 id="contributing" class="section">Contributing</h1>
+        <p>The source code of ToolTemplate can be found <a href="https://github.com/biopet/tool-template">here</a>.
+        We welcome any contributions. Bug reports, feature requests and feedback can be submitted at our
+        <a href="https://github.com/biopet/tool-template/issues">issue tracker</a>.</p>
+        <p>ToolTemplate is build using sbt. Before submitting a pull request, make sure all tests can be passed by
+        running <code>sbt test</code> from the project&#39;s root. We recommend using an IDE to work on ToolTemplate. We have had
+        good results with <a href="https://www.jetbrains.com/idea/">this IDE</a>.</p>
         
         <h1 id="contact" class="section">Contact</h1>
         <p>
@@ -161,23 +178,21 @@
         For any question related to ToolTemplate, please use the
         <a href='https://github.com/biopet/tool-template/issues'>github issue tracker</a>
         or contact
-          <a href='http://sasc.lumc.nl/'>the SASC team</a> directly at: <a href='&#109;&#97;&#105;&#108;&#116;&#111;&#58;
- &#115;&#97;&#115;&#99;&#64;&#108;&#117;&#109;&#99;&#46;&#110;&#108;'>
-          &#115;&#97;&#115;&#99;&#64;&#108;&#117;&#109;&#99;&#46;&#110;&#108;</a>.
+         <a href='http://sasc.lumc.nl/'>the SASC team</a> directly at: <a href='&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#97;&#115;&#99;&#64;&#108;&#117;&#109;&#99;&#46;&#110;&#108;'>
+        &#115;&#97;&#115;&#99;&#64;&#108;&#117;&#109;&#99;&#46;&#110;&#108;</a>.
         </p>      
 
       </div>
     </div>
 
   </div>
-
-</body>
   <script>
     var loc = window.location.pathname;
     var thisDir = loc.substring(0, loc.lastIndexOf('/'));
     var splitLocation = window.location.pathname.split('/');
     var version = splitLocation[splitLocation.length - 2]
     document.getElementById("Version").innerHTML = "Version " + version;
-
   </script>
+</body>
+
 </html>
