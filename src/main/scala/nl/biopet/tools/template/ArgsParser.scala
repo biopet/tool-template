@@ -11,4 +11,5 @@ class ArgsParser(cmdName: String) extends AbstractOptParser[Args](cmdName) {
     .required()
     .maxOccurs(1)
     .action((x, c) => c.copy(inputFile = x))
+    .text("NonEmptyDescription")
 }
