@@ -10,7 +10,6 @@ object ToolTemplate extends ToolCommand[Args] {
   def main(args: Array[String]): Unit = {
     val cmdArgs = cmdArrayToArgs(args)
 
-
     logger.info("Start")
 
     //TODO: Execute code
@@ -18,7 +17,8 @@ object ToolTemplate extends ToolCommand[Args] {
     logger.info("Done")
   }
   // TODO: Remove loremIpsum
-  val loremIpsum : String = """Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  val loremIpsum: String =
+    """Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                               |Aliquam bibendum tellus sed lectus tristique egestas.
                               |Aenean malesuada lacus sed mollis hendrerit. Aliquam ac mollis sapien.
                               |Donec vel suscipit dui. Aenean pretium nibh in pulvinar consequat.
@@ -38,13 +38,13 @@ object ToolTemplate extends ToolCommand[Args] {
                               |Nam mattis enim a ligula iaculis vulputate. Nam fringilla.
                               """.stripMargin
 
-  def descriptionText: String = loremIpsum.substring(0,250)
+  def descriptionText: String = loremIpsum.substring(0, 250)
 
   def manualText: String =
     s"""
-      |${loremIpsum.substring(0,250)} Example:
+      |${loremIpsum.substring(0, 250)} Example:
       |${example("-i", "<input_file>")}
     """.stripMargin
 
-  def exampleText: String = loremIpsum.substring(0,250)
+  def exampleText: String = loremIpsum.substring(0, 250)
 }

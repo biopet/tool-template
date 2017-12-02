@@ -10,7 +10,7 @@ object Documentation {
     ToolTemplate.generateDocumentation(
       outputDirectory = docsDir,
       version = version,
-      redirect= redirect
+      redirect = redirect
     )
   }
 }
