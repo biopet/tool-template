@@ -77,10 +77,13 @@ siteDirectory in Laika  := file("target/site")
 includeFilter in ghpagesCleanSite := new FileFilter{
   def accept(f: File) = {
     println("path=" + f.getPath)
-    f.getPath.contains(s"${version.value}") ||
-      ( !(isSnapshot.value) &&
-      f.getPath == new java.io.File(ghpagesRepository.value, "index.html").getPath )
+    if (isSnapshot.value) {
+      f.getParent.contains("develop")
+    } else {
+      f.getPath.contains(s"${version.value}") ||
+        f.getPath == new java.io.File(ghpagesRepository.value, "index.html").getPath
     }
+  }
 }
 lazy val generateDocs = taskKey[Unit]("Generate documentation files")
 lazy val generateReadme = taskKey[Unit]("Generate readme")
