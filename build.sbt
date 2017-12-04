@@ -69,7 +69,11 @@ git.remoteRepo := s"git@github.com:biopet/$urlToolName.git"
 ghpagesRepository := file(ghpagesDir)
 
 // Puts Scaladoc output in `in /api subfolder`
-siteSubdirName in SiteScaladoc := s"${version.value}/api"
+
+siteSubdirName in SiteScaladoc := {
+  if (isSnapshot.value) {"develop/api"}
+  else s"${version.value}/api"
+ }
 siteDirectory in Laika  := file("target/site")
 
 // FileFilter that only includes current version for deletion.
