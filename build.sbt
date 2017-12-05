@@ -2,6 +2,23 @@ organization := "com.github.biopet"
 //TODO: change name
 name := "ToolTemplate"
 
+homepage := Some(url(s"https://github.com/biopet/$urlToolName"))
+licenses := Seq("MIT" -> url("https://opensource.org/licenses/MIT"))
+
+scmInfo := Some(
+  ScmInfo(
+    url(s"https://github.com/biopet/$urlToolName"),
+    s"scm:git@github.com:biopet/$urlToolName.git"
+  )
+)
+
+developers := List(
+  Developer(id="ffinfo", name="Peter van 't Hof", email="pjrvanthof@gmail.com", url=url("https://github.com/ffinfo")),
+  Developer(id="rhpvorderman", name="Ruben Vorderman", email="r.h.p.vorderman@lumc.nl", url=url("https://github.com/rhpvorderman"))
+)
+
+publishMavenStyle := true
+
 scalaVersion := "2.11.11"
 
 resolvers += Resolver.sonatypeRepo("snapshots")
@@ -49,8 +66,8 @@ releaseProcess := Seq[ReleaseStep](
 
 // Documentation stuff
 //TODO: Change these two variables
-val urlToolName="tool-template"
-val classPrefix="nl.biopet.tools.template"
+lazy val urlToolName="tool-template"
+lazy val classPrefix="nl.biopet.tools.template"
 
 import LaikaKeys._
 enablePlugins(LaikaSitePlugin)
