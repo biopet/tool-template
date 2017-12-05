@@ -2,9 +2,10 @@ package nl.biopet.tools.template
 
 import java.io.File
 
-import nl.biopet.utils.tool.AbstractOptParser
+import nl.biopet.utils.tool.{AbstractOptParser, ToolCommand}
 
-class ArgsParser(cmdName: String) extends AbstractOptParser[Args](cmdName) {
+class ArgsParser(toolCommand: ToolCommand[Args])
+    extends AbstractOptParser[Args](toolCommand) {
   opt[File]("inputFile")
     .abbr("i")
     .unbounded()

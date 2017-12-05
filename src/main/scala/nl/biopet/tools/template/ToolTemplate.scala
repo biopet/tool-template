@@ -4,7 +4,7 @@ import nl.biopet.utils.tool.ToolCommand
 
 object ToolTemplate extends ToolCommand[Args] {
   def emptyArgs = Args()
-  def argsParser = new ArgsParser(toolName)
+  def argsParser = new ArgsParser(this)
 
   override def urlToolName: String = "tool-template"
   def main(args: Array[String]): Unit = {

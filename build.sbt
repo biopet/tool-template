@@ -1,6 +1,6 @@
 organization := "com.github.biopet"
 //TODO: change name
-name := "tool-template"
+name := "ToolTemplate"
 
 scalaVersion := "2.11.11"
 
@@ -95,10 +95,10 @@ lazy val generateReadme = taskKey[Unit]("Generate readme")
 generateDocs := {
   import sbt.Attributed.data
   val r = (runner in Runtime).value
-  val input = Seq(docsDir, version.value, (!isSnapshot.value).toString)
+  val input = Seq("--generateDocs", s"outputDir=$docsDir,version=${version.value},release=${!isSnapshot.value}", version.value)
   val classPath =  (fullClasspath in Runtime).value
   r.run(
-    s"$classPrefix.Documentation",
+    s"$classPrefix.${name.value}",
     data(classPath),
     input,
     streams.value.log
@@ -107,10 +107,10 @@ generateDocs := {
 generateReadme := {
   import sbt.Attributed.data
   val r: ScalaRun = (runner in Runtime).value
-  val input = Seq(readme)
+  val input = Seq("--generateReadme", readme)
   val classPath =  (fullClasspath in Runtime).value
   r.run(
-    s"$classPrefix.Readme",
+    s"$classPrefix.${name.value}",
     data(classPath),
     input,
     streams.value.log
