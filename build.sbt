@@ -6,6 +6,9 @@ biopetUrlName := "tool-template"
 // TODO: Is it a tool?
 biopetIsTool := true
 
+// TODO: Check if mainclass is correct
+mainClass in assembly := Some(s"nl.biopet.tools.${name.value.toLowerCase()}.${name.value}")
+
 developers := List(
   Developer(id="ffinfo", name="Peter van 't Hof", email="pjrvanthof@gmail.com", url=url("https://github.com/ffinfo")),
   Developer(id="rhpvorderman", name="Ruben Vorderman", email="r.h.p.vorderman@lumc.nl", url=url("https://github.com/rhpvorderman"))
