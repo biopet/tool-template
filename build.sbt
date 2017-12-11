@@ -1,6 +1,7 @@
 organization := "com.github.biopet"
 //TODO: change name
 name := "ToolTemplate"
+biopetUrlName := "tool-template"
 
 developers := List(
   Developer(id="ffinfo", name="Peter van 't Hof", email="pjrvanthof@gmail.com", url=url("https://github.com/ffinfo")),
