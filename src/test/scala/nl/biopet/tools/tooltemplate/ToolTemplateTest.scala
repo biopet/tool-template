@@ -1,4 +1,4 @@
-package nl.biopet.tools.template
+package nl.biopet.tools.tooltemplate
 
 import nl.biopet.utils.test.tools.ToolTest
 import org.testng.annotations.Test

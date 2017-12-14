@@ -1,16 +1,21 @@
 organization := "com.github.biopet"
+
 //TODO: change name
 name := "ToolTemplate"
-
-scalaVersion := "2.11.11"
-
-biopetIsTool := true
 biopetUrlName := "tool-template"
+
+// TODO: Is it a tool?
+biopetIsTool := true
+
+// TODO: Check if mainclass is correct
+mainClass in assembly := Some(s"nl.biopet.tools.${name.value.toLowerCase()}.${name.value}")
 
 developers := List(
   Developer(id="ffinfo", name="Peter van 't Hof", email="pjrvanthof@gmail.com", url=url("https://github.com/ffinfo")),
   Developer(id="rhpvorderman", name="Ruben Vorderman", email="r.h.p.vorderman@lumc.nl", url=url("https://github.com/rhpvorderman"))
 )
 
+scalaVersion := "2.11.11"
+
 libraryDependencies += "com.github.biopet" %% "tool-utils" % "0.2"
-libraryDependencies += "com.github.biopet" %% "tool-test-utils" % "0.1" % Test changing()
+libraryDependencies += "com.github.biopet" %% "tool-test-utils" % "0.1" % Test
