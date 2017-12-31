@@ -1,9 +1,9 @@
 <!DOCTYPE html >
 <html>
         <head>
-          <title>tooltemplate - nl.biopet.tools.tooltemplate</title>
-          <meta name="description" content="tooltemplate - nl.biopet.tools.tooltemplate" />
-          <meta name="keywords" content="tooltemplate nl.biopet.tools.tooltemplate" />
+          <title>validateannotation - nl.biopet.tools.validateannotation</title>
+          <meta name="description" content="validateannotation - nl.biopet.tools.validateannotation" />
+          <meta name="keywords" content="validateannotation nl.biopet.tools.validateannotation" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -16,7 +16,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../../index.html';
-            var hash = 'nl.biopet.tools.tooltemplate.package';
+            var hash = 'nl.biopet.tools.validateannotation.package';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -30,8 +30,8 @@
       <div id="definition">
         <img alt="Package" src="../../../../lib/package_big.png" />
         <p id="owner"><a href="../../../package.html" class="extype" name="nl">nl</a>.<a href="../../package.html" class="extype" name="nl.biopet">biopet</a>.<a href="../package.html" class="extype" name="nl.biopet.tools">tools</a></p>
-        <h1>tooltemplate</h1><span class="permalink">
-      <a href="../../../../index.html#nl.biopet.tools.tooltemplate.package" title="Permalink" target="_top">
+        <h1>validateannotation</h1><span class="permalink">
+      <a href="../../../../index.html#nl.biopet.tools.validateannotation.package" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -43,7 +43,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <span class="name">tooltemplate</span>
+        <span class="name">validateannotation</span>
       </span>
       </h4>
       
@@ -66,7 +66,7 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="nl.biopet.tools.tooltemplate.Args" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="nl.biopet.tools.validateannotation.Args" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="ArgsextendsProductwithSerializable"></a>
       <a id="Args:Args"></a>
       <h4 class="signature">
@@ -75,16 +75,16 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="Args.html"><span class="name">Args</span></a><span class="params">(<span name="inputFile">inputFile: <span class="extype" name="java.io.File">File</span> = <span class="symbol">null</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a href="Args.html"><span class="name">Args</span></a><span class="params">(<span name="refflatFile">refflatFile: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.io.File">File</span>] = <span class="symbol">None</span></span>, <span name="reference">reference: <span class="extype" name="java.io.File">File</span> = <span class="symbol">null</span></span>, <span name="failOnError">failOnError: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>, <span name="gtfFiles">gtfFiles: <span class="extype" name="scala.List">List</span>[<span class="extype" name="java.io.File">File</span>] = <span class="symbol">Nil</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#nl.biopet.tools.tooltemplate.package@ArgsextendsProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../../../index.html#nl.biopet.tools.validateannotation.package@ArgsextendsProductwithSerializable" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       
-    </li><li name="nl.biopet.tools.tooltemplate.ArgsParser" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="ArgsParserextendsAbstractOptParser[nl.biopet.tools.tooltemplate.Args]"></a>
+    </li><li name="nl.biopet.tools.validateannotation.ArgsParser" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ArgsParserextendsAbstractOptParser[nl.biopet.tools.validateannotation.Args]"></a>
       <a id="ArgsParser:ArgsParser"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -92,10 +92,10 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="ArgsParser.html"><span class="name">ArgsParser</span></a><span class="result"> extends <span class="extype" name="nl.biopet.utils.tool.AbstractOptParser">AbstractOptParser</span>[<a href="Args.html" class="extype" name="nl.biopet.tools.tooltemplate.Args">Args</a>]</span>
+        <a href="ArgsParser.html"><span class="name">ArgsParser</span></a><span class="result"> extends <span class="extype" name="nl.biopet.utils.tool.AbstractOptParser">AbstractOptParser</span>[<a href="Args.html" class="extype" name="nl.biopet.tools.validateannotation.Args">Args</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#nl.biopet.tools.tooltemplate.package@ArgsParserextendsAbstractOptParser[nl.biopet.tools.tooltemplate.Args]" title="Permalink" target="_top">
+      <a href="../../../../index.html#nl.biopet.tools.validateannotation.package@ArgsParserextendsAbstractOptParser[nl.biopet.tools.validateannotation.Args]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -107,19 +107,19 @@
 
         <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li name="nl.biopet.tools.tooltemplate.ToolTemplate" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="ToolTemplate"></a>
-      <a id="ToolTemplate:ToolTemplate"></a>
+              <ol><li name="nl.biopet.tools.validateannotation.ValidateAnnotation" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ValidateAnnotation"></a>
+      <a id="ValidateAnnotation:ValidateAnnotation"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="ToolTemplate$.html"><span class="name">ToolTemplate</span></a><span class="result"> extends <span class="extype" name="nl.biopet.utils.tool.ToolCommand">ToolCommand</span>[<a href="Args.html" class="extype" name="nl.biopet.tools.tooltemplate.Args">Args</a>]</span>
+        <a href="ValidateAnnotation$.html"><span class="name">ValidateAnnotation</span></a><span class="result"> extends <span class="extype" name="nl.biopet.utils.tool.ToolCommand">ToolCommand</span>[<a href="Args.html" class="extype" name="nl.biopet.tools.validateannotation.Args">Args</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#nl.biopet.tools.tooltemplate.package@ToolTemplate" title="Permalink" target="_top">
+      <a href="../../../../index.html#nl.biopet.tools.validateannotation.package@ValidateAnnotation" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
