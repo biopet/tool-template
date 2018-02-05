@@ -9,9 +9,8 @@ after_success:
   - grep -e "\* org.scala-lang" sbt.log
   - |
     n=`grep -ce "\* org.scala-lang" sbt.log`
-    echo $?
     echo $n
-    if (n==0); then echo "ERROR: Found conflicting dependencies inside biopet"; exit 1; fi
+    if [ "$n" -ne "0" ]; then echo "ERROR: Found conflicting dependencies inside biopet"; exit 1; fi
 #    || \
 #    (echo "ERROR: Found conflicting dependencies inside biopet" && exit 1)
   - "git diff --exit-code || (echo ERROR: Git changes detected, please regenerate the readme, create license headers and run scalafmt with: sbt biopetGenerateReadme headerCreate scalafmt && exit 1)"
