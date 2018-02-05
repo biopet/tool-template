@@ -6,7 +6,6 @@ script:
   - |
     (grep -ce '\* org.scala-lang' sbt.log | (read n && (n==0))) || \
     (echo "ERROR: Found conflicting dependencies inside biopet" && exit 1)
-  - ""
   - "git diff --exit-code || (echo ERROR: Git changes detected, please regenerate the readme, create license headers and run scalafmt with: sbt biopetGenerateReadme headerCreate scalafmt && exit 1)"
 after_success:
   - sbt coveralls
