@@ -9,6 +9,7 @@ after_success:
   - grep -e "\* org.scala-lang" sbt.log
   - |
     grep -ce "\* org.scala-lang" sbt.log | (read n && (n==0))
+    echo $n
     echo $?
 #    || \
 #    (echo "ERROR: Found conflicting dependencies inside biopet" && exit 1)
