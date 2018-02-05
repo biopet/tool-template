@@ -2,10 +2,11 @@ language: scala
 scala:
   - 2.11.11
 script:
-  - "sbt -batch clean evicted biopetTest | tee sbt.log"
+  - "sbt -batch clean evicted | tee sbt.log"
 after_success:
-  - sbt coveralls
-  - bash <(curl -s https://codecov.io/bash)
+#  - sbt coveralls
+#  - bash <(curl -s https://codecov.io/bash)
+  - grep -e "\* org.scala-lang" sbt.log
   - |
     grep -ce "\* org.scala-lang" sbt.log | (read n && (n==0))
 #    || \
