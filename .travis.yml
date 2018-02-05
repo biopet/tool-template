@@ -2,7 +2,8 @@ language: scala
 scala:
   - 2.11.11
 script:
-  - sbt clean scalafmt headerCreate coverage test coverageReport coverageAggregate makeSite biopetGenerateReadme
+  - sbt clean evicted scalafmt headerCreate coverage test coverageReport coverageAggregate makeSite biopetGenerateReadme | tee sbt.log
+  - grep -ce "\* org.scala-lang" sbt.log | (read n && ((n==0)))
   - "git diff --exit-code || (echo ERROR: Git changes detected, please regenerate the readme, create license headers and run scalafmt with: sbt biopetGenerateReadme headerCreate scalafmt && exit 1)"
 after_success:
   - sbt coveralls
