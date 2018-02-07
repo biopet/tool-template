@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title>ValidateAnnotation</title>
+    <title>ToolTemplate</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -30,7 +30,7 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">ValidateAnnotation</a>
+          <a class="navbar-brand" href="#">ToolTemplate</a>
           <ul class="nav navbar-nav navbar-right">
             <li class="navbar-text" id="Version">
               Version</li>
@@ -67,8 +67,8 @@
         <ul class="nav nav-sidebar nav-list">
           <li><b>Project Links</b></li>
 
-          <li><a href="https://github.com/biopet/validateannotation">Source code</a></li>
-          <li><a href="https://github.com/biopet/validateannotation/issues">Feedback, feature requests and bug reports</a></li>
+          <li><a href="https://github.com/biopet/tool-template">Source code</a></li>
+          <li><a href="https://github.com/biopet/tool-template/issues">Feedback, feature requests and bug reports</a></li>
           <li><a href="api/index.html">API Documentation</a></li>
         </ul>
         <ul class="nav nav-sidebar nav-list">
@@ -82,40 +82,38 @@
 
         
         <h1 id="description" class="section">Description</h1>
-        <p>ValidateAnnotationvalidates whether an annotation file is correct.
-        It checks whether all the annotated contigs are present on the reference.
-        It can check gtf or refflat files. It can also check both,
-        in which case it will also check for dissimilarities between the refflat and
-        GTF files.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Aliquam bibendum tellus sed lectus tristique egestas.
+        Aenean malesuada lacus sed mollis hendrerit. Aliquam ac mollis sapien.
+        Donec vel suscipit dui. Aenean pretium nibh in pulvinar consequat.
+        D</p>
         
         <h1 id="installation" class="section">Installation</h1>
-        <p>ValidateAnnotation requires Java 8 to be installed on your device. Download Java 8
+        <p>ToolTemplate requires Java 8 to be installed on your device. Download Java 8
         <a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">here</a>
         or install via your distribution&#39;s package manager.</p>
-        <p>Download the latest version of ValidateAnnotation <a href="https://github.com/biopet/validateannotation/releases/">here</a>.
+        <p>Download the latest version of ToolTemplate <a href="https://github.com/biopet/tool-template/releases/">here</a>.
         To generate the usage run:</p>
-        <pre><code>java -jar ValidateAnnotation --version.jar --help</code></pre>
+        <pre><code>java -jar ToolTemplate --version.jar --help</code></pre>
         
         <h1 id="manual" class="section">Manual</h1>
-        <p>ValidateAnnotation requires either a refflatfile or a GTF file.
-        It also requires a reference genome to check the annotation.
-        reference genome to check the annotation.</p>
-        <p>The tool has a <code>--disableFail</code> flag which makes sure the tool returns
-        exit code 0 when the tool has failed.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Aliquam bibendum tellus sed lectus tristique egestas.
+        Aenean malesuada lacus sed mollis hendrerit. Aliquam ac mollis sapien.
+        Donec vel suscipit dui. Aenean pretium nibh in pulvinar consequat.
+        D Example:</p>
+        <pre><code>java -jar &lt;ToolTemplate_jar&gt; \
+-i &lt;input_file&gt;</code></pre>
         
         <h2 id="example" class="section">Example</h2>
-        <p>ValidateAnnotation can accept both a refflat File and a GTF file:</p>
-        <pre><code>java -jar &lt;ValidateAnnotation_jar&gt; \
--r refflatFile \
--g gtfFile1 \
--R reference.fasta</code></pre>
-        <p>Running the validation on only one of them is also possible:</p>
-        <pre><code>java -jar &lt;ValidateAnnotation_jar&gt; \
--r refflatFile \
--R reference.fasta</code></pre>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Aliquam bibendum tellus sed lectus tristique egestas.
+        Aenean malesuada lacus sed mollis hendrerit. Aliquam ac mollis sapien.
+        Donec vel suscipit dui. Aenean pretium nibh in pulvinar consequat.
+        D</p>
         
         <h2 id="usage" class="section">Usage</h2>
-        <p>Usage for ValidateAnnotation:</p>
+        <p>Usage for ToolTemplate:</p>
         <table class="table">
           <thead>
             <tr>
@@ -145,52 +143,34 @@
               <td>Print version</td>
             </tr>
             <tr>
-              <td>--refflatFile, -r</td>
-              <td>no</td>
-              <td>no</td>
-              <td>Refflat file to check</td>
-            </tr>
-            <tr>
-              <td>--gtfFile, -g</td>
-              <td>no</td>
-              <td>no</td>
-              <td>Gtf files to check</td>
-            </tr>
-            <tr>
-              <td>--reference, -R</td>
+              <td>--inputFile, -i</td>
               <td>yes</td>
               <td>no</td>
-              <td>Reference fasta to check vcf file against</td>
-            </tr>
-            <tr>
-              <td>--disableFail</td>
-              <td>no</td>
-              <td>no</td>
-              <td>Do not fail on error. The tool will still exit when encountering an error, but will do so with exit code 0</td>
+              <td>NonEmptyDescription</td>
             </tr>
           </tbody>
         </table>
         
         <h1 id="about" class="section">About</h1>
-        <p>ValidateAnnotation is part of BIOPET tool suite that is developed at LUMC by <a href="http://sasc.lumc.nl/">the SASC team</a>.
+        <p>ToolTemplate is part of BIOPET tool suite that is developed at LUMC by <a href="http://sasc.lumc.nl/">the SASC team</a>.
         Each tool in the BIOPET tool suite is meant to offer a standalone function that can be used to perform a
         dedicate data analysis task or added as part of <a href="http://biopet-docs.readthedocs.io/en/latest/">BIOPET pipelines</a>.</p>
         <p>All tools in the BIOPET tool suite are <a href="https://www.gnu.org/philosophy/free-sw.html">Free</a> and
         <a href="https://opensource.org/osd">Open Source</a> Software.</p>
         
         <h1 id="contributing" class="section">Contributing</h1>
-        <p>The source code of ValidateAnnotation can be found <a href="https://github.com/biopet/validateannotation">here</a>.
+        <p>The source code of ToolTemplate can be found <a href="https://github.com/biopet/tool-template">here</a>.
         We welcome any contributions. Bug reports, feature requests and feedback can be submitted at our
-        <a href="https://github.com/biopet/validateannotation/issues">issue tracker</a>.</p>
-        <p>ValidateAnnotation is build using sbt. Before submitting a pull request, make sure all tests can be passed by
-        running <code>sbt test</code> from the project&#39;s root. We recommend using an IDE to work on ValidateAnnotation. We have had
+        <a href="https://github.com/biopet/tool-template/issues">issue tracker</a>.</p>
+        <p>ToolTemplate is build using sbt. Before submitting a pull request, make sure all tests can be passed by
+        running <code>sbt test</code> from the project&#39;s root. We recommend using an IDE to work on ToolTemplate. We have had
         good results with <a href="https://www.jetbrains.com/idea/">this IDE</a>.</p>
         
         <h1 id="contact" class="section">Contact</h1>
         <p>
           <!-- Obscure e-mail address for spammers -->
-        For any question related to ValidateAnnotation, please use the
-        <a href='https://github.com/biopet/validateannotation/issues'>github issue tracker</a>
+        For any question related to ToolTemplate, please use the
+        <a href='https://github.com/biopet/tool-template/issues'>github issue tracker</a>
         or contact
          <a href='http://sasc.lumc.nl/'>the SASC team</a> directly at: <a href='&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#97;&#115;&#99;&#64;&#108;&#117;&#109;&#99;&#46;&#110;&#108;'>
         &#115;&#97;&#115;&#99;&#64;&#108;&#117;&#109;&#99;&#46;&#110;&#108;</a>.
