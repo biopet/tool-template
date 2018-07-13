@@ -12,7 +12,7 @@ biopetUrlName := "tool-template"
 biopetIsTool := true
 
 //TODO: Remove this line as soon as release testing is finished.
-biocondaMainGitUrl := "git@github.com/biopet/bioconda-recipes.git"
+biocondaMainGitUrl := "git@github.com:/biopet/bioconda-recipes.git"
 
 // TODO: Check if mainClass is correct
 mainClass in assembly := Some(
