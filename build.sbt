@@ -29,6 +29,7 @@ developers := List(
             url = url("https://github.com/rhpvorderman"))
 )
 
+crossScalaVersions := Seq("2.11.12", "2.12.5")
 scalaVersion := "2.11.12"
 
 libraryDependencies += "com.github.biopet" %% "tool-utils" % "0.3.1"
