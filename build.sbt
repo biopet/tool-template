@@ -11,6 +11,9 @@ biopetUrlName := "tool-template"
 // TODO: Is it a tool?
 biopetIsTool := true
 
+//TODO: Remove this line as soon as release testing is finished.
+biocondaMainGitUrl := "git@github.com/biopet/bioconda-recipes.git"
+
 // TODO: Check if mainClass is correct
 mainClass in assembly := Some(
   s"nl.biopet.tools.${name.value.toLowerCase()}.${name.value}")
