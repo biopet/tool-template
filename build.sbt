@@ -32,5 +32,5 @@ developers := List(
 crossScalaVersions := Seq("2.11.12", "2.12.5")
 scalaVersion := "2.11.12"
 
-libraryDependencies += "com.github.biopet" %% "tool-utils" % "0.4"
+libraryDependencies += "com.github.biopet" %% "tool-utils" % "0.3.1"
 libraryDependencies += "com.github.biopet" %% "tool-test-utils" % "0.2.2" % Test
