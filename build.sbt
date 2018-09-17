@@ -33,4 +33,4 @@ crossScalaVersions := Seq("2.11.12", "2.12.6")
 biocondaMainGitUrl := "https://github.com/biopet/bioconda-recipes.git"
 
 libraryDependencies += "com.github.biopet" %% "tool-utils" % "0.6"
-
+libraryDependencies += "com.github.biopet" %% "tool-test-utils" % "0.3"
